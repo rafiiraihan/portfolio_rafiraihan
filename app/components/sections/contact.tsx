@@ -15,14 +15,14 @@ export default function Contact() {
     const emailRef = useRef<HTMLAnchorElement>(null);
 
     const socialLinks = [
-        { name: "GitHub", icon: Github, url: "#" },
-        { name: "LinkedIn", icon: Linkedin, url: "#" },
-        { name: "Twitter", icon: Twitter, url: "#" }
+        { name: "GitHub", icon: Github, url: "https://github.com/rafiiraihan" },
+        { name: "LinkedIn", icon: Linkedin, url: "https://www.linkedin.com/in/rafiraihann" },
+        { name: "Email", icon: Mail, url: "mailto:rafiraihan.dev@gmail.com" },
     ];
 
     const copyEmail = (e: React.MouseEvent) => {
         e.preventDefault();
-        navigator.clipboard.writeText("romancaseres929@gmail.com");
+        navigator.clipboard.writeText("rafiraihan.dev@gmail.com");
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
     };
@@ -131,7 +131,7 @@ export default function Contact() {
                     <div className="w-full h-full flex flex-col justify-center lg:pt-12">
                         <a 
                             ref={emailRef}
-                            href="mailto:romancaseres929@gmail.com"
+                            href="mailto:rafiraihan.dev@gmail.com"
                             className="email-card group relative block w-full h-[300px] lg:h-[400px] overflow-hidden bg-transparent border-t border-border hover:border-foreground/50 transition-colors duration-500 pt-8 sm:pt-12"
                         >
                             <div className="relative h-full flex flex-col justify-between z-10 px-2 sm:px-0">
@@ -147,7 +147,7 @@ export default function Contact() {
                                 <div>
                                     <span className="text-xs uppercase tracking-[0.2em] text-foreground/45 mb-4 block">Drop me a line</span>
                                     <h3 className="flex flex-col text-xl sm:text-3xl md:text-4xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-black uppercase text-foreground mb-8 leading-[0.9]">
-                                        <span>romancaseres929</span>
+                                        <span>rafiraihan.dev</span>
                                         <span className="text-foreground/50">@gmail.com</span>
                                     </h3>
                                     

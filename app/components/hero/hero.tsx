@@ -33,7 +33,7 @@ export default function Hero() {
                             <div className="font-mono uppercase tracking-[0.28em] text-[10px] text-foreground/70">
                                 <div>01/</div>
                                 <div className="mt-2 text-foreground/55 tracking-[0.26em]">
-                                    From Philippines with
+                                    From Indonesia with
                                     <br />
                                     Love
                                 </div>
@@ -48,9 +48,9 @@ export default function Hero() {
                             data-shoot-granularity="char"
                             className="text-foreground font-black uppercase leading-[0.9] tracking-[-0.05em] text-[clamp(2.6rem,11vw,4.6rem)]"
                         >
-                            Software
+                            AI/ML
                             <br />
-                            Developer
+                            Engineer
                         </h1>
                     </HeroEnterBlock>
 
@@ -79,14 +79,14 @@ export default function Hero() {
                     <HeroEnterBlock drift="right">
                         <div className="text-right">
                             <p className="text-[11px] font-mono uppercase tracking-[0.22em] text-foreground/72">
-                                Building fast, clean web apps
+                                TRANSFORMING DATA INTO
                                 <br />
-                                for real users.
+                                SCALABLE AI SOLUTIONS
                             </p>
                             <div className="mt-2 text-[10px] font-mono uppercase tracking-[0.24em] text-foreground/55">
                                 Open for freelance / full-time
                                 <br />
-                                Based in Quezon City, PH
+                                Based in Bandung City, ID
                             </div>
                         </div>
                     </HeroEnterBlock>
@@ -97,9 +97,9 @@ export default function Hero() {
                             data-shoot-granularity="char"
                             className="text-right text-foreground font-black uppercase leading-[0.88] tracking-[-0.06em] text-[clamp(3.1rem,13vw,5.2rem)]"
                         >
-                            Roman
+                            Rafi
                             <br />
-                            Caseres
+                            Raihan
                         </div>
                     </HeroEnterBlock>
 
@@ -118,9 +118,9 @@ export default function Hero() {
                                 <div className="text-[10px] font-mono uppercase tracking-[0.28em] text-foreground/70">
                                     I based in
                                     <br />
-                                    Quezon City,
+                                    Bandung City,
                                     <br />
-                                    Passionate in architect &amp; UI
+                                    Passionate in ai/ml &amp; data science
                                 </div>
                             </div>
                         </div>
@@ -130,11 +130,11 @@ export default function Hero() {
                         <HeroExploreLink />
                     </HeroEnterBlock>
 
-                    <HeroEnterBlock drift="right">
+                    {/* <HeroEnterBlock drift="right">
                         <div className="text-right text-[10px] font-mono uppercase tracking-[0.28em] text-foreground/55">
-                            Design &amp; code by Roman
+                            Design &amp; code by Rafi Raihan
                         </div>
-                    </HeroEnterBlock>
+                    </HeroEnterBlock> */}
                 </HeroMotionRoot>
 
                 {/* Desktop/tablet layout */}
@@ -147,7 +147,7 @@ export default function Hero() {
                                 <div className="font-mono uppercase tracking-[0.28em] text-[10px] text-foreground/70 md:text-right">
                                     <div>01/</div>
                                     <div className="mt-2 text-foreground/55 tracking-[0.26em]">
-                                        From Philippines with
+                                        From Bandung with
                                         <br />
                                         Love
                                     </div>
@@ -161,9 +161,9 @@ export default function Hero() {
                                 data-shoot-granularity="char"
                                 className="text-foreground font-black uppercase leading-[0.88] tracking-[-0.04em] text-[clamp(2.8rem,6.6vw,6.6rem)]"
                             >
-                                Software
+                                AI/ML
                                 <br />
-                                Developer
+                                Engineer
                             </h1>
                             <div className="mt-4">
                                 <HeroTechChips />
@@ -176,14 +176,14 @@ export default function Hero() {
                         <HeroEnterBlock className="col-span-12 md:col-span-5 md:order-2" drift="right">
                             <div className="mb-8 max-w-104 md:ml-auto md:text-right">
                                 <p className="text-[11px] font-mono uppercase tracking-[0.22em] text-foreground/72">
-                                    Building fast, clean web apps
+                                    Transforming data into
                                     <br />
-                                    for real users.
+                                    scalable AI solutions.
                                 </p>
                                 <div className="mt-3 text-[10px] font-mono uppercase tracking-[0.24em] text-foreground/55">
                                     Open for freelance / full-time
                                     <br />
-                                    Based in Quezon City, PH
+                                    Based in Bandung City, ID
                                 </div>
                             </div>
 
@@ -192,9 +192,9 @@ export default function Hero() {
                                 data-shoot-granularity="char"
                                 className="text-foreground font-black uppercase leading-[0.88] tracking-[-0.05em] text-[clamp(3.4rem,6.7vw,6.4rem)] md:text-right"
                             >
-                                Roman
+                                Rafi
                                 <br />
-                                Caseres
+                                Raihan
                             </div>
 
                             <div className="mt-8 text-[10px] font-mono uppercase tracking-[0.26em] text-foreground/55 md:text-right">
@@ -230,16 +230,16 @@ export default function Hero() {
                                             <div className="text-[10px] font-mono uppercase tracking-[0.28em] text-foreground/70">
                                                 I based in
                                                 <br />
-                                                Quezon City,
+                                                Bandung City,
                                                 <br />
-                                                Passionate in architect &amp; UI
+                                                Passionate in ai/ml &amp; data science
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div className="mt-10 text-left text-[10px] font-mono uppercase tracking-[0.28em] text-foreground/55">
-                                        Design &amp; code by Roman
-                                    </div>
+                                    {/* <div className="mt-10 text-left text-[10px] font-mono uppercase tracking-[0.28em] text-foreground/55">
+                                        Design &amp; code by Rafi Raihan
+                                    </div> */}
                                 </div>
                             </div>
                         </HeroEnterBlock>

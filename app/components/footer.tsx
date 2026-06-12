@@ -10,10 +10,10 @@ if (typeof window !== "undefined") {
 }
 
 const socialLinks = [
-    { name: "Email", icon: Mail, url: "mailto:romancaseres929@gmail.com" },
-    { name: "GitHub", icon: Github, url: "#" },
-    { name: "LinkedIn", icon: Linkedin, url: "#" },
-    { name: "Twitter", icon: Twitter, url: "#" },
+    { name: "Email", icon: Mail, url: "mailto:rafiraihan.dev@gmail.com" },
+    { name: "GitHub", icon: Github, url: "https://github.com/rafiiraihan" },
+    { name: "LinkedIn", icon: Linkedin, url: "https://linkedin.com/in/rafiraihan" },
+    // { name: "Twitter", icon: Twitter, url: "#" },
 ];
 
 export default function Footer() {
@@ -80,7 +80,7 @@ export default function Footer() {
                     {/* Middle Section: Large Name Branding */}
                     <div className="footer-content border-y border-border py-12">
                         <h1 className="text-[clamp(3rem,10vw,12rem)] font-black uppercase text-foreground/5 leading-none text-center select-none pointer-events-none">
-                            Roman Caseres
+                            Rafi Raihan
                         </h1>
                     </div>
                 </div>
@@ -89,11 +89,11 @@ export default function Footer() {
                 <div className="footer-content flex flex-col-reverse md:flex-row justify-between items-center gap-6 md:gap-0">
                     <div className="flex flex-col md:flex-row items-center gap-2 md:gap-6 text-center md:text-left">
                         <p className="text-foreground/45 text-xs uppercase tracking-wider">
-                            © {currentYear} Roman Caseres
+                            © {currentYear}
                         </p>
                         <span className="hidden md:block text-foreground/15">|</span>
                         <p className="text-foreground/45 text-xs uppercase tracking-wider">
-                            Dev By Roman
+                            Rafi Raihan
                         </p>
                     </div>
                     

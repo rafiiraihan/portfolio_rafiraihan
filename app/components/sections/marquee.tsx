@@ -127,22 +127,22 @@ export default function Marquee() {
                         className="flex items-center whitespace-nowrap will-change-transform"
                     >
                         <span className="text-[clamp(6rem,12vw,14rem)] font-black text-foreground leading-[0.9] tracking-tighter select-none">
-                            Web Dev
+                            AI
                         </span>
                         <span className="text-[clamp(3rem,5vw,5rem)] text-foreground/20 mx-14 select-none font-light italic">
                             &
                         </span>
                         <span className="text-[clamp(6rem,12vw,14rem)] font-black text-foreground leading-[0.9] tracking-tighter select-none">
-                            App Dev
+                            ML Engineer
                         </span>
 
                         <div className="ml-24 pr-32 flex flex-col gap-2">
                             <span className="text-base text-foreground/45 font-mono uppercase tracking-[0.2em]">Services</span>
                             <div className="h-px w-8 bg-foreground/20 mb-2" />
-                            <span className="text-xl text-foreground/70 font-bold uppercase tracking-tight">Frontend Development</span>
-                            <span className="text-xl text-foreground/70 font-bold uppercase tracking-tight">Backend Systems</span>
-                            <span className="text-xl text-foreground/70 font-bold uppercase tracking-tight">Responsive Design</span>
-                            <span className="text-xl text-foreground/70 font-bold uppercase tracking-tight">API Integration</span>
+                            <span className="text-xl text-foreground/70 font-bold uppercase tracking-tight">Deep Learning</span>
+                            <span className="text-xl text-foreground/70 font-bold uppercase tracking-tight">MLOps</span>
+                            <span className="text-xl text-foreground/70 font-bold uppercase tracking-tight">Gen AI</span>
+                            <span className="text-xl text-foreground/70 font-bold uppercase tracking-tight">Computer Vision</span>
                         </div>
                     </div>
 
@@ -152,22 +152,22 @@ export default function Marquee() {
                         className="flex items-center whitespace-nowrap will-change-transform"
                     >
                         <span className="text-[clamp(6rem,12vw,14rem)] font-black text-foreground leading-[0.9] tracking-tighter select-none">
-                            UI
+                            AI
                         </span>
                         <span className="text-[clamp(3rem,5vw,5rem)] text-foreground/20 mx-14 select-none font-light italic">
                             &
                         </span>
                         <span className="text-[clamp(6rem,12vw,14rem)] font-black text-foreground leading-[0.9] tracking-tighter select-none">
-                            Systems
+                            ML Engineer
                         </span>
 
                         <div className="ml-24 pr-32 flex flex-col gap-2 text-right">
-                            <span className="text-base text-foreground/45 font-mono uppercase tracking-[0.2em]">Focus</span>
+                            <span className="text-base text-foreground/45 font-mono uppercase tracking-[0.2em]">Services</span>
                             <div className="ml-auto h-px w-8 bg-foreground/20 mb-2" />
-                            <span className="text-xl text-foreground/70 font-bold uppercase tracking-tight">Performance</span>
-                            <span className="text-xl text-foreground/70 font-bold uppercase tracking-tight">Accessibility</span>
-                            <span className="text-xl text-foreground/70 font-bold uppercase tracking-tight">Clean UI</span>
-                            <span className="text-xl text-foreground/70 font-bold uppercase tracking-tight">Great UX</span>
+                            <span className="text-xl text-foreground/70 font-bold uppercase tracking-tight">Deep Learning</span>
+                            <span className="text-xl text-foreground/70 font-bold uppercase tracking-tight">MLOps</span>
+                            <span className="text-xl text-foreground/70 font-bold uppercase tracking-tight">Gen AI</span>
+                            <span className="text-xl text-foreground/70 font-bold uppercase tracking-tight">Data Science</span>
                         </div>
                     </div>
                 </div>
@@ -178,7 +178,7 @@ export default function Marquee() {
                 <div className="space-y-2">
                     <div ref={mobileRow1Ref} className="whitespace-nowrap translate-x-12">
                         <span className="text-7xl font-black text-foreground uppercase leading-none tracking-tighter">
-                            Web Dev
+                            AI Engineer
                         </span>
                     </div>
                     <div className="flex items-center gap-4">
@@ -188,7 +188,7 @@ export default function Marquee() {
                     </div>
                     <div ref={mobileRow2Ref} className="whitespace-nowrap -translate-x-12 flex justify-end">
                         <span className="text-7xl font-black text-foreground uppercase leading-none tracking-tighter">
-                            App Dev
+                            ML Engineer
                         </span>
                     </div>
                 </div>
@@ -196,11 +196,10 @@ export default function Marquee() {
                 <div className="mobile-services-grid grid grid-cols-1 gap-4 pt-8">
                     <span className="text-[10px] text-foreground/45 font-mono uppercase tracking-[0.3em] mb-2">Expertise</span>
                     {[
-                        "Frontend Development",
-                        "Backend Systems",
-                        "Responsive Design",
-                        "API Integration",
-                        "Database Architecture"
+                        "Deep Learning",
+                        "MLOps",
+                        "Gen AI",
+                        "Computer Vision"
                     ].map((service, i) => (
                         <div key={i} className="mobile-service-item flex items-center gap-3">
                             <div className="w-1.5 h-1.5 rounded-full bg-foreground/25" />

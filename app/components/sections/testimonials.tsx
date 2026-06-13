@@ -14,33 +14,33 @@ const testimonials = [
     {
         name: "Sarah Johnson",
         role: "Product Manager",
-        company: "Tech Innovations Inc.",
+        company: "Sample Reviewer",
         image: "👩‍💼",
-        content: "Roman is an exceptional developer who consistently delivers high-quality work. His attention to detail and problem-solving skills are outstanding. He transformed our application's performance significantly.",
+        content: "Rafi is an exceptional developer who consistently delivers high-quality work. His attention to detail and problem-solving skills are outstanding. He transformed our application's performance significantly.",
         rating: 5
     },
     {
         name: "Michael Chen",
         role: "CTO",
-        company: "Digital Solutions LLC",
+        company: "Sample Reviewer",
         image: "👨‍💻",
-        content: "Working with Roman was a pleasure. He's not just a developer but a true problem solver. His ability to understand complex requirements and translate them into elegant solutions is remarkable.",
+        content: "Working with Rafi was a pleasure. He's not just a developer but a true problem solver. His ability to understand complex requirements and translate them into elegant solutions is remarkable.",
         rating: 5
     },
     {
         name: "Emily Rodriguez",
-        role: "Design Lead",
-        company: "StartupHub",
+        role: "Data Science Lead",
+        company: "Sample Reviewer",
         image: "👩‍🎨",
-        content: "Roman's technical expertise combined with his understanding of user experience makes him an invaluable team member. He brings ideas to life beautifully and efficiently.",
+        content: "Rafi's technical expertise combined with his understanding of user experience makes him an invaluable team member. He brings ideas to life beautifully and efficiently.",
         rating: 5
     },
     {
         name: "David Thompson",
-        role: "Engineering Manager",
-        company: "Tech Innovations Inc.",
+        role: "AI Product Manager",
+        company: "Sample Reviewer",
         image: "👨‍🔧",
-        content: "Roman is a mentor to junior developers and always willing to share knowledge. His code quality and architectural decisions have significantly improved our codebase.",
+        content: "Rafi consistently demonstrates strong analytical thinking and a deep understanding of machine learning concepts. His ability to transform complex datasets into actionable insights makes him a valuable contributor to any AI project.",
         rating: 5
     }
 ];

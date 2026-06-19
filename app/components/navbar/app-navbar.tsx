@@ -373,7 +373,7 @@ export default function AppNavbar() {
     useEffect(() => {
         const fetchStars = async () => {
             try {
-                const response = await fetch("https://api.github.com/repos/mano-sudo/portfolio-v3");
+                const response = await fetch("https://api.github.com/repos/rafiiraihan/portofolio-web");
                 if (!response.ok) return;
                 const data = (await response.json()) as { stargazers_count?: number };
                 if (typeof data.stargazers_count === "number") {
@@ -720,7 +720,7 @@ export default function AppNavbar() {
                 {/* Left - Logo */}
                 <Link href="/" aria-label="Go to home" className="inline-flex min-w-0 shrink items-center">
                     <span className={`${topTextClass} truncate font-semibold leading-[0.88] tracking-[-0.03em] text-[clamp(0.65rem,3.2vw,0.95rem)] sm:text-[clamp(0.72rem,1.35vw,0.95rem)]`}>
-                        DevByRoman
+                        Rafi Raihan
                     </span>
                 </Link>
 
@@ -740,147 +740,148 @@ export default function AppNavbar() {
                             </span>
                         </div>
 
-                        <div className="relative" ref={chatRef}>
-                                <button
-                                    type="button"
-                                    onClick={() => setChatOpen((prev) => !prev)}
-                                    className={`relative inline-flex items-center gap-1.5 rounded-lg border px-2 py-1 transition-colors sm:gap-2 sm:px-2.5 ${topButtonClass}`}
-                                    aria-expanded={chatOpen}
-                                    aria-label={
-                                        showMessengerParticipantBadge
-                                            ? `Open chat, ${messengerOtherParticipantCount} other guest${messengerOtherParticipantCount === 1 ? "" : "s"} in thread`
-                                            : "Open chat"
-                                    }
-                                >
-                                    <MessageCircle className="h-3.5 w-3.5 shrink-0 sm:h-4 sm:w-4" />
-                                    <span className="hidden min-[420px]:inline text-[10px] font-semibold uppercase tracking-wide sm:text-xs">
-                                        Messages
+                        {/* Live Chat (Messages) and GitHub Stars status disabled as requested */}
+                        {/* <div className="relative" ref={chatRef}>
+                            <button
+                                type="button"
+                                onClick={() => setChatOpen((prev) => !prev)}
+                                className={`relative inline-flex items-center gap-1.5 rounded-lg border px-2 py-1 transition-colors sm:gap-2 sm:px-2.5 ${topButtonClass}`}
+                                aria-expanded={chatOpen}
+                                aria-label={
+                                    showMessengerParticipantBadge
+                                        ? `Open chat, ${messengerOtherParticipantCount} other guest${messengerOtherParticipantCount === 1 ? "" : "s"} in thread`
+                                        : "Open chat"
+                                }
+                            >
+                                <MessageCircle className="h-3.5 w-3.5 shrink-0 sm:h-4 sm:w-4" />
+                                <span className="hidden min-[420px]:inline text-[10px] font-semibold uppercase tracking-wide sm:text-xs">
+                                    Messages
+                                </span>
+                                {showMessengerParticipantBadge ? (
+                                    <span
+                                        className="absolute -right-1.5 -top-1.5 flex h-[18px] min-w-[18px] items-center justify-center rounded-full bg-red-600 px-1 text-[10px] font-bold leading-none text-white shadow-sm ring-2 ring-background sm:h-5 sm:min-w-[20px] sm:text-[11px]"
+                                        aria-hidden
+                                    >
+                                        {messengerOtherParticipantCount > 99
+                                            ? "99+"
+                                            : messengerOtherParticipantCount}
                                     </span>
-                                    {showMessengerParticipantBadge ? (
-                                        <span
-                                            className="absolute -right-1.5 -top-1.5 flex h-[18px] min-w-[18px] items-center justify-center rounded-full bg-red-600 px-1 text-[10px] font-bold leading-none text-white shadow-sm ring-2 ring-background sm:h-5 sm:min-w-[20px] sm:text-[11px]"
-                                            aria-hidden
-                                        >
-                                            {messengerOtherParticipantCount > 99
-                                                ? "99+"
-                                                : messengerOtherParticipantCount}
-                                        </span>
-                                    ) : null}
-                                </button>
+                                ) : null}
+                            </button>
 
                             {chatOpen && (
                                 <div className="z-61 w-[min(calc(100vw-1.25rem),360px)] rounded-2xl border border-border bg-card p-3 text-foreground shadow-[0_24px_55px_-30px_rgba(0,0,0,0.35)] max-sm:fixed max-sm:left-1/2 max-sm:right-auto max-sm:top-[calc(var(--app-header-h,56px)+0.5rem)] max-sm:mt-0 max-sm:-translate-x-1/2 sm:absolute sm:right-0 sm:top-full sm:mt-2 sm:translate-x-0 dark:shadow-[0_24px_55px_-30px_rgba(0,0,0,0.55)]">
-                                <div className="mb-2 flex items-center justify-between border-b border-border pb-2">
-                                    <span className="text-xs font-mono uppercase tracking-[0.2em] text-foreground/80"># general</span>
-                                    <div className="flex items-center gap-3">
-                                        <button
-                                            type="button"
-                                            onClick={() => setIsEditingName((prev) => !prev)}
-                                            className="text-[10px] font-mono uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:text-foreground"
-                                        >
-                                            {isEditingName ? "cancel" : "change name"}
-                                        </button>
-                                        <span className="text-[10px] font-mono uppercase tracking-[0.18em] text-muted-foreground">live chat</span>
+                                    <div className="mb-2 flex items-center justify-between border-b border-border pb-2">
+                                        <span className="text-xs font-mono uppercase tracking-[0.2em] text-foreground/80"># general</span>
+                                        <div className="flex items-center gap-3">
+                                            <button
+                                                type="button"
+                                                onClick={() => setIsEditingName((prev) => !prev)}
+                                                className="text-[10px] font-mono uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:text-foreground"
+                                            >
+                                                {isEditingName ? "cancel" : "change name"}
+                                            </button>
+                                            <span className="text-[10px] font-mono uppercase tracking-[0.18em] text-muted-foreground">live chat</span>
+                                        </div>
                                     </div>
-                                </div>
 
-                                {isEditingName && (
-                                    <div className="mb-2 flex items-center gap-2 rounded-lg border border-border bg-muted/50 p-2">
+                                    {isEditingName && (
+                                        <div className="mb-2 flex items-center gap-2 rounded-lg border border-border bg-muted/50 p-2">
+                                            <input
+                                                type="text"
+                                                value={nameDraft}
+                                                onChange={(event) => setNameDraft(event.target.value)}
+                                                onKeyDown={(event) => {
+                                                    if (event.key === "Enter") saveDisplayName();
+                                                }}
+                                                placeholder="Your display name"
+                                                className="h-8 w-full rounded-md border border-border bg-background px-2 text-sm text-foreground outline-none placeholder:text-muted-foreground focus:border-ring"
+                                            />
+                                            <button
+                                                type="button"
+                                                onClick={saveDisplayName}
+                                                className="rounded-md border border-border bg-muted px-2 py-1 text-xs font-semibold uppercase tracking-wide text-foreground hover:bg-muted/80"
+                                            >
+                                                Save
+                                            </button>
+                                        </div>
+                                    )}
+
+                                    <div
+                                        ref={messageListRef}
+                                        className="scrollbar-hidden max-h-60 space-y-2 overflow-y-auto overscroll-contain pr-1"
+                                        style={{ WebkitOverflowScrolling: "touch" }}
+                                        onWheel={(event) => event.stopPropagation()}
+                                        onTouchMove={(event) => event.stopPropagation()}
+                                        onScroll={(event) => {
+                                            const element = event.currentTarget;
+                                            const distanceToBottom =
+                                                element.scrollHeight - element.scrollTop - element.clientHeight;
+                                            shouldAutoScrollRef.current = distanceToBottom < 28;
+                                        }}
+                                    >
+                                        {chatMessages.map((message) => (
+                                            <div key={message.id} className="flex items-start gap-2.5 rounded-xl px-2.5 py-2">
+                                                <img
+                                                    src={getAvatarUrl(message.user)}
+                                                    alt={`${message.user} avatar`}
+                                                    className="h-9 w-9 shrink-0 rounded-full border border-border bg-muted"
+                                                />
+                                                <div className="min-w-0">
+                                                    <div className="flex min-w-0 items-center gap-2">
+                                                        <span className="min-w-0 truncate text-base font-bold leading-none text-foreground">{message.user}</span>
+                                                        {message.countryCode ? (
+                                                            <span
+                                                                className="shrink-0 text-base leading-none"
+                                                                title={message.countryCode}
+                                                                aria-label={`${message.countryCode} flag`}
+                                                            >
+                                                                {countryCodeToFlagEmoji(message.countryCode)}
+                                                            </span>
+                                                        ) : null}
+                                                        <span className="shrink-0 text-[10px] font-mono uppercase tracking-[0.12em] text-muted-foreground">{message.time}</span>
+                                                    </div>
+                                                    <p className="mt-1 wrap-break-word text-base leading-tight text-foreground/85">{message.text}</p>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+
+                                    <div className="mt-3 flex items-center gap-2 border-t border-border pt-2">
+                                        <img
+                                            src={getAvatarUrl(displayName || userNameRef.current)}
+                                            alt="Your avatar"
+                                            className="h-8 w-8 shrink-0 rounded-full border border-border bg-muted"
+                                        />
                                         <input
                                             type="text"
-                                            value={nameDraft}
-                                            onChange={(event) => setNameDraft(event.target.value)}
+                                            value={chatInput}
+                                            onChange={(event) => setChatInput(event.target.value)}
                                             onKeyDown={(event) => {
-                                                if (event.key === "Enter") saveDisplayName();
+                                                if (event.key === "Enter") sendMessage();
                                             }}
-                                            placeholder="Your display name"
-                                            className="h-8 w-full rounded-md border border-border bg-background px-2 text-sm text-foreground outline-none placeholder:text-muted-foreground focus:border-ring"
+                                            placeholder="Message #general"
+                                            className="h-9 w-full rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none placeholder:text-muted-foreground focus:border-ring"
                                         />
                                         <button
                                             type="button"
-                                            onClick={saveDisplayName}
-                                            className="rounded-md border border-border bg-muted px-2 py-1 text-xs font-semibold uppercase tracking-wide text-foreground hover:bg-muted/80"
+                                            onClick={sendMessage}
+                                            className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-muted text-foreground transition-colors hover:bg-muted/80"
+                                            aria-label="Send message"
                                         >
-                                            Save
+                                            <Send className="h-4 w-4" />
                                         </button>
                                     </div>
-                                )}
 
-                                <div
-                                    ref={messageListRef}
-                                    className="scrollbar-hidden max-h-60 space-y-2 overflow-y-auto overscroll-contain pr-1"
-                                    style={{ WebkitOverflowScrolling: "touch" }}
-                                    onWheel={(event) => event.stopPropagation()}
-                                    onTouchMove={(event) => event.stopPropagation()}
-                                    onScroll={(event) => {
-                                        const element = event.currentTarget;
-                                        const distanceToBottom =
-                                            element.scrollHeight - element.scrollTop - element.clientHeight;
-                                        shouldAutoScrollRef.current = distanceToBottom < 28;
-                                    }}
-                                >
-                                    {chatMessages.map((message) => (
-                                        <div key={message.id} className="flex items-start gap-2.5 rounded-xl px-2.5 py-2">
-                                            <img
-                                                src={getAvatarUrl(message.user)}
-                                                alt={`${message.user} avatar`}
-                                                className="h-9 w-9 shrink-0 rounded-full border border-border bg-muted"
-                                            />
-                                            <div className="min-w-0">
-                                                <div className="flex min-w-0 items-center gap-2">
-                                                    <span className="min-w-0 truncate text-base font-bold leading-none text-foreground">{message.user}</span>
-                                                    {message.countryCode ? (
-                                                        <span
-                                                            className="shrink-0 text-base leading-none"
-                                                            title={message.countryCode}
-                                                            aria-label={`${message.countryCode} flag`}
-                                                        >
-                                                            {countryCodeToFlagEmoji(message.countryCode)}
-                                                        </span>
-                                                    ) : null}
-                                                    <span className="shrink-0 text-[10px] font-mono uppercase tracking-[0.12em] text-muted-foreground">{message.time}</span>
-                                                </div>
-                                                <p className="mt-1 wrap-break-word text-base leading-tight text-foreground/85">{message.text}</p>
-                                            </div>
-                                        </div>
-                                    ))}
+                                    <div className="mt-1 pl-10 text-[10px] font-mono uppercase tracking-[0.16em] text-muted-foreground">
+                                        You are chatting as {displayName || userNameRef.current}
+                                    </div>
                                 </div>
-
-                                <div className="mt-3 flex items-center gap-2 border-t border-border pt-2">
-                                    <img
-                                        src={getAvatarUrl(displayName || userNameRef.current)}
-                                        alt="Your avatar"
-                                        className="h-8 w-8 shrink-0 rounded-full border border-border bg-muted"
-                                    />
-                                    <input
-                                        type="text"
-                                        value={chatInput}
-                                        onChange={(event) => setChatInput(event.target.value)}
-                                        onKeyDown={(event) => {
-                                            if (event.key === "Enter") sendMessage();
-                                        }}
-                                        placeholder="Message #general"
-                                        className="h-9 w-full rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none placeholder:text-muted-foreground focus:border-ring"
-                                    />
-                                    <button
-                                        type="button"
-                                        onClick={sendMessage}
-                                        className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-muted text-foreground transition-colors hover:bg-muted/80"
-                                        aria-label="Send message"
-                                    >
-                                        <Send className="h-4 w-4" />
-                                    </button>
-                                </div>
-
-                                <div className="mt-1 pl-10 text-[10px] font-mono uppercase tracking-[0.16em] text-muted-foreground">
-                                    You are chatting as {displayName || userNameRef.current}
-                                </div>
-                            </div>
                             )}
-                        </div>
+                        </div> */}
 
-                        <Link
-                            href="https://github.com/mano-sudo/portfolio-v3"
+                        {/* <Link
+                            href="https://github.com/rafiiraihan/portofolio-web"
                             target="_blank"
                             rel="noopener noreferrer"
                             className={`inline-flex items-center gap-1 rounded-lg border px-2 py-1 transition-colors sm:gap-2 sm:px-2.5 ${topButtonClass}`}
@@ -891,7 +892,7 @@ export default function AppNavbar() {
                                 {stars?.toLocaleString() ?? "1,017"}
                             </span>
                             <Star className={`h-3 w-3 shrink-0 sm:h-3.5 sm:w-3.5 ${isProjectDetailPage ? "fill-white/90 text-white/90" : "fill-foreground/80 text-foreground/80"}`} />
-                        </Link>
+                        </Link> */}
                     </div>
 
                     <button
@@ -926,19 +927,16 @@ export default function AppNavbar() {
                         aria-label="Toggle menu"
                     >
                         <span
-                            className={`block w-5 h-[2px] ${menuBarClass} transition-all duration-300 origin-center ${
-                                menuOpen ? "rotate-45 translate-y-[7px]" : ""
-                            }`}
+                            className={`block w-5 h-[2px] ${menuBarClass} transition-all duration-300 origin-center ${menuOpen ? "rotate-45 translate-y-[7px]" : ""
+                                }`}
                         />
                         <span
-                            className={`block w-5 h-[2px] ${menuBarClass} transition-all duration-300 ${
-                                menuOpen ? "opacity-0 scale-x-0" : "opacity-100"
-                            }`}
+                            className={`block w-5 h-[2px] ${menuBarClass} transition-all duration-300 ${menuOpen ? "opacity-0 scale-x-0" : "opacity-100"
+                                }`}
                         />
                         <span
-                            className={`block w-5 h-[2px] ${menuBarClass} transition-all duration-300 origin-center ${
-                                menuOpen ? "-rotate-45 -translate-y-[7px]" : ""
-                            }`}
+                            className={`block w-5 h-[2px] ${menuBarClass} transition-all duration-300 origin-center ${menuOpen ? "-rotate-45 -translate-y-[7px]" : ""
+                                }`}
                         />
                     </button>
                 </div>
@@ -947,11 +945,10 @@ export default function AppNavbar() {
             {/* Full-Screen Menu Overlay */}
             <div
                 data-shoot-ui="1"
-                className={`fixed inset-0 z-55 transition-all duration-500 ${
-                    menuOpen
+                className={`fixed inset-0 z-55 transition-all duration-500 ${menuOpen
                         ? "opacity-100 pointer-events-auto"
                         : "opacity-0 pointer-events-none"
-                }`}
+                    }`}
             >
                 {/* Backdrop */}
                 <div className="absolute inset-0 bg-background/95 backdrop-blur-md" />
@@ -978,21 +975,19 @@ export default function AppNavbar() {
                                 key={item.href}
                                 href={item.href}
                                 onClick={() => setMenuOpen(false)}
-                                className={`group relative block py-4 transition-all duration-500 ${
-                                    menuOpen
+                                className={`group relative block py-4 transition-all duration-500 ${menuOpen
                                         ? "opacity-100 translate-y-0"
                                         : "opacity-0 translate-y-8"
-                                }`}
+                                    }`}
                                 style={{
                                     transitionDelay: menuOpen ? `${150 + i * 75}ms` : "0ms",
                                 }}
                             >
                                 <span
-                                    className={`text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-wider transition-colors duration-300 ${
-                                        isActive
+                                    className={`text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-wider transition-colors duration-300 ${isActive
                                             ? "text-foreground"
                                             : "text-foreground/40 group-hover:text-foreground"
-                                    }`}
+                                        }`}
                                 >
                                     {item.name}
                                 </span>
@@ -1005,11 +1000,10 @@ export default function AppNavbar() {
 
                     {/* Divider */}
                     <div
-                        className={`w-16 h-px bg-border my-4 transition-all duration-500 ${
-                            menuOpen
+                        className={`w-16 h-px bg-border my-4 transition-all duration-500 ${menuOpen
                                 ? "opacity-100 scale-x-100"
                                 : "opacity-0 scale-x-0"
-                        }`}
+                            }`}
                         style={{ transitionDelay: menuOpen ? "375ms" : "0ms" }}
                     />
 
@@ -1017,11 +1011,10 @@ export default function AppNavbar() {
                     <Link
                         href="#contact"
                         onClick={() => setMenuOpen(false)}
-                        className={`text-lg sm:text-xl font-semibold uppercase tracking-widest text-muted-foreground hover:text-foreground transition-all duration-500 ${
-                            menuOpen
+                        className={`text-lg sm:text-xl font-semibold uppercase tracking-widest text-muted-foreground hover:text-foreground transition-all duration-500 ${menuOpen
                                 ? "opacity-100 translate-y-0"
                                 : "opacity-0 translate-y-8"
-                        }`}
+                            }`}
                         style={{ transitionDelay: menuOpen ? "450ms" : "0ms" }}
                     >
                         LET&apos;S WORK
@@ -1029,11 +1022,10 @@ export default function AppNavbar() {
 
                     {/* Time display at bottom */}
                     <div
-                        className={`absolute bottom-12 left-1/2 -translate-x-1/2 text-muted-foreground text-xs font-mono tracking-widest transition-all duration-500 ${
-                            menuOpen
+                        className={`absolute bottom-12 left-1/2 -translate-x-1/2 text-muted-foreground text-xs font-mono tracking-widest transition-all duration-500 ${menuOpen
                                 ? "opacity-100 translate-y-0"
                                 : "opacity-0 translate-y-4"
-                        }`}
+                            }`}
                         style={{ transitionDelay: menuOpen ? "525ms" : "0ms" }}
                     >
                         {currentTime}

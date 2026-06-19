@@ -12,7 +12,7 @@ if (typeof window !== "undefined") {
 const socialLinks = [
     { name: "Email", icon: Mail, url: "mailto:rafiraihan.dev@gmail.com" },
     { name: "GitHub", icon: Github, url: "https://github.com/rafiiraihan" },
-    { name: "LinkedIn", icon: Linkedin, url: "https://linkedin.com/in/rafiraihan" },
+    { name: "LinkedIn", icon: Linkedin, url: "https://www.linkedin.com/in/rafiraihann" },
     // { name: "Twitter", icon: Twitter, url: "#" },
 ];
 

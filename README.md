@@ -1,4 +1,4 @@
-# DevByRoman - 2026 Developer Portfolio
+# Rafi Raihan - Developer Portfolio
 
 ![Next.js](https://img.shields.io/badge/Next.js-black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-blue)
@@ -9,7 +9,7 @@
 Modern software developer portfolio built with **Next.js, TypeScript, Tailwind CSS, and Framer Motion**.
 
 ## Live Website
-[https://romancaseres.cloud](https://romancaseres.cloud)
+[https://#](https://#)
 
 ## Features
 - Minimal brutalist UI
@@ -39,9 +39,6 @@ npm run dev
 ```
 
 ## Contact
-- LinkedIn: [Add your LinkedIn URL]
-- GitHub: [https://github.com/mano-sudo](https://github.com/mano-sudo)
-- Portfolio: [https://romancaseres.cloud](https://romancaseres.cloud)
-
-
-
+- LinkedIn: [https://www.linkedin.com/in/rafiraihann](https://www.linkedin.com/in/rafiraihann)
+- GitHub: [https://github.com/rafiiraihan](https://github.com/rafiiraihan)
+- Portfolio: [https://#](https://#)

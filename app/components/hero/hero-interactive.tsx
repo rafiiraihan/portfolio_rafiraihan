@@ -245,9 +245,9 @@ export function HeroInteractivePortrait({
 }
 
 const STACK_LINKS = [
-    { label: "Next.js", href: "/projects" },
-    { label: "TypeScript", href: "/projects" },
-    { label: "UI systems", href: "/#contact" },
+    { label: "ARTIFICIAL INTELLIGENCE", href: "/projects" },
+    { label: "MACHINE LEARNING", href: "/projects" },
+    { label: "DEEP LEARNING", href: "/projects" },
 ] as const;
 
 export function HeroTechChips(): React.JSX.Element {

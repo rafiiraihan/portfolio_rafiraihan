@@ -137,18 +137,13 @@ export default function Stats() {
                             About
                         </h2>
                         <p className="stats-anim max-w-full text-[0.9375rem] leading-relaxed text-foreground/70 wrap-anywhere sm:max-w-lg sm:text-base md:text-lg">
-                            Full-Stack Developer with a BS in Information Technology, experienced in building scalable web
-                            applications using React, TypeScript, Next.js, Laravel, and Node.js. Skilled in RESTful APIs,
-                            MySQL, and responsive user interfaces.
+                            I am a Software Engineering graduate with a strong interest in Machine Learning and Artificial Intelligence. Fascinated by how intelligent systems can learn from data and solve real-world challenges, I enjoy exploring technologies that transform complex information into meaningful solutions.
                         </p>
                         <p className="stats-anim max-w-full text-[0.8125rem] leading-relaxed text-foreground/55 wrap-anywhere sm:max-w-lg sm:text-sm md:text-base">
-                            Led mobile development for an award-winning real-time flood monitoring system (Best Research
-                            Paper 2025). Experienced in full-stack development for enterprise and healthcare applications,
-                            building dashboards, analytics, and role-based systems.
+                            My journey in AI has been driven by curiosity and a desire to create impactful applications. Through academic and project-based experiences, I have developed a passion for building solutions that bridge technology and human needs.
                         </p>
                         <p className="stats-anim max-w-full text-[0.8125rem] leading-relaxed text-foreground/55 wrap-anywhere sm:max-w-lg sm:text-sm md:text-base">
-                            Passionate about clean code, problem-solving, and collaboration, with a focus on delivering
-                            high-performance, user-centered applications.
+                            I am committed to continuous learning and aspire to contribute to the advancement of AI by developing innovative technologies that create real value and positive impact.
                         </p>
                     </div>
 

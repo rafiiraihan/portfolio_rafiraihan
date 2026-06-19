@@ -20,25 +20,25 @@ const geistMono = Geist_Mono({
 });
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://romancaseres.cloud";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://rafiraihan.dev";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Roman Caseres | Software Developer",
-  description: "Roman Caseres is a software developer with a passion for building web applications.",
+  title: "Rafi Raihan | AI/ML Engineer",
+  description: "Rafi Raihan is a Software Engineering graduate specializing in Machine Learning and Artificial Intelligence, passionate about building intelligent solutions.",
   icons: {
-    icon: "/DevByRoman.png",
+    icon: "/images/logo.png",
   },
   openGraph: {
-    title: "Roman Caseres | Software Developer",
-    description: "Roman Caseres is a software developer with a passion for building web applications.",
-    images: "/DevByRoman.png",
+    title: "Rafi Raihan | AI/ML Engineer",
+    description: "Rafi Raihan is a Software Engineering graduate specializing in Machine Learning and Artificial Intelligence, passionate about building intelligent solutions.",
+    images: "/images/logo.png",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Roman Caseres | Software Developer",
-    description: "Roman Caseres is a software developer with a passion for building web applications.",
-    images: ["/DevByRoman.png"],
+    title: "Rafi Raihan | AI/ML Engineer",
+    description: "Rafi Raihan is a Software Engineering graduate specializing in Machine Learning and Artificial Intelligence, passionate about building intelligent solutions.",
+    images: ["/images/logo.png"],
   },
 };
 

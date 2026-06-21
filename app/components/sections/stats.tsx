@@ -9,27 +9,37 @@ if (typeof window !== "undefined") {
     gsap.registerPlugin(ScrollTrigger);
 }
 
-const techStacks = [
-    {
-        label: "Frontend",
-        items: ["JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS"],
-        iconDir: "/images/frontend",
-    },
-    {
-        label: "Backend",
-        items: ["Node.js", "Laravel", "PHP"],
-        iconDir: "/images/backend",
-    },
-    {
-        label: "Database",
-        items: ["MySQL", "PostgresSQL", "MongoDB"],
-        iconDir: "/images/database",
-    },
-    {
-        label: "Tools",
-        items: ["Git", "Docker"],
-        iconDir: "/images/tools",
-    },
+const row1 = [
+    { name: "Python", path: "/images/tech/Python.svg" },
+    { name: "JavaScript", path: "/images/tech/JavaScript.svg" },
+    { name: "TypeScript", path: "/images/tech/TypeScript.svg" },
+    { name: "Tailwind CSS", path: "/images/tech/Tailwind CSS.svg" },
+    { name: "PHP", path: "/images/tech/PHP.svg" },
+    { name: "MySQL", path: "/images/tech/MySQL.svg" },
+    { name: "PostgreSQL", path: "/images/tech/PostgresSQL.svg" },
+    { name: "MongoDB", path: "/images/tech/MongoDB.svg" }
+];
+
+const row2 = [
+    { name: "React", path: "/images/tech/React.svg" },
+    { name: "Flask", path: "/images/tech/Flask.svg" },
+    { name: "NumPy", path: "/images/tech/NumPy.svg" },
+    { name: "Matplotlib", path: "/images/tech/Matplotlib.svg" },
+    { name: "PyTorch", path: "/images/tech/Pytorch.svg" },
+    { name: "TensorFlow", path: "/images/tech/Tensorflow.svg" },
+    { name: "Scikit-learn", path: "/images/tech/Scikit-Learn.svg" },
+    { name: "Pandas", path: "/images/tech/Pandas.svg" }
+];
+
+const row3 = [
+    { name: "Docker", path: "/images/tech/Docker.svg" },
+    { name: "Git", path: "/images/tech/Git.svg" },
+    { name: "GitHub", path: "/images/tech/Github.svg" },
+    { name: "VS Code", path: "/images/tech/VSCode.svg" },
+    { name: "Jupyter Notebook", path: "/images/tech/Jupyter.svg" },
+    { name: "ChatGPT", path: "/images/tech/ChatGPT.svg" },
+    { name: "Claude", path: "/images/tech/Claude.svg" },
+    { name: "WordPress", path: "/images/tech/Wordpress.svg" }
 ];
 
 export default function Stats() {
@@ -54,8 +64,6 @@ export default function Stats() {
             gsap.set(statsItems, { autoAlpha: 0, y: 22 });
             gsap.set(techItems, { autoAlpha: 0, y: 26 });
 
-            // One timeline + one ScrollTrigger (no scrub). Previously each .stats-anim / .tech-anim had its
-            // own scrubbed trigger (~24 listeners updating every scroll frame -> heavy jank from Marquee/Projects).
             const master = gsap.timeline({ paused: true });
 
             if (panels.length > 0) {
@@ -117,15 +125,38 @@ export default function Stats() {
         return () => ctx.revert();
     }, []);
 
+    const renderCard = (logo: { name: string; path: string }) => (
+        <div
+            key={logo.name}
+            className="tech-anim group flex items-center gap-2.5 px-3 py-2 rounded-lg border border-border/30 bg-muted/10 hover:bg-muted/30 hover:border-foreground/20 hover:scale-[1.03] transition-all duration-300"
+            title={logo.name}
+        >
+            <div className="relative w-5.5 h-5.5 sm:w-6.5 sm:h-6.5 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 shrink-0">
+                <Image
+                    src={logo.path}
+                    alt={logo.name}
+                    width={26}
+                    height={26}
+                    className="object-contain w-full h-full grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100 transition-all duration-300"
+                />
+            </div>
+            <span className="font-mono text-[10px] sm:text-xs uppercase leading-none tracking-wide text-foreground/60 group-hover:text-foreground transition-colors truncate">
+                {logo.name}
+            </span>
+        </div>
+    );
+
     return (
         <section
             ref={sectionRef}
-            className="relative min-w-0 overflow-x-clip  bg-background py-12 text-foreground sm:py-16 md:py-20 lg:py-24 xl:py-28"
+            id="about"
+            className="relative min-w-0 overflow-x-clip bg-background py-12 text-foreground sm:py-16 md:py-20 lg:py-24 xl:py-28 scroll-mt-24"
         >
             <div className="w-full min-w-0 max-w-[min(100%,1920px)] mx-auto px-3 min-[375px]:px-4 sm:px-6 md:px-10 lg:px-14 xl:px-20 2xl:px-28">
-                <div className="flex min-w-0 flex-col lg:flex-row lg:justify-between lg:items-start gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20 2xl:gap-24">
+                {/* Upper Area: About Me (Left) and Profile Photo (Right) */}
+                <div className="flex min-w-0 flex-col lg:flex-row lg:justify-between lg:items-center gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20 2xl:gap-24">
                     {/* Left — About */}
-                    <div className="stats-panel-left w-full min-w-0 max-w-full lg:w-[42%] lg:max-w-none xl:w-5/12 space-y-4 sm:space-y-5 md:space-y-6">
+                    <div className="stats-panel-left w-full min-w-0 max-w-full lg:w-[50%] lg:max-w-none xl:w-6/12 space-y-4 sm:space-y-5 md:space-y-6">
                         <div className="flex min-w-0 items-center gap-2 sm:gap-3">
                             <span className="stats-anim shrink-0 font-mono text-[9px] uppercase tracking-[0.28em] text-foreground/55 min-[375px]:text-[10px] sm:text-xs sm:tracking-[0.35em]">
                                 About
@@ -147,45 +178,49 @@ export default function Stats() {
                         </p>
                     </div>
 
-                    {/* Right — Tech Stacks */}
-                    <div className="stats-panel-right w-full min-w-0 max-w-full lg:w-[58%] lg:max-w-none xl:w-7/12 lg:self-center">
-                        <div className="grid gap-6 sm:gap-8 md:gap-10 lg:gap-12">
-                            {techStacks.map((group) => (
-                                <div
-                                    key={group.label}
-                                    className="grid min-w-0 grid-cols-1 min-[480px]:grid-cols-12 items-start sm:items-center gap-4 min-[480px]:gap-5 sm:gap-6 md:gap-8"
-                                >
-                                    <div className="min-w-0 min-[480px]:col-span-12 sm:col-span-4">
-                                        <div className="stats-anim wrap-anywhere text-xl font-black uppercase leading-[1.05] tracking-tight text-foreground/45 min-[400px]:text-2xl sm:text-3xl md:text-4xl lg:text-[2.5rem] xl:text-4xl 2xl:text-5xl">
-                                            {group.label}
-                                        </div>
-                                    </div>
+                    {/* Right — Profile Photo */}
+                    <div className="stats-panel-right w-full min-w-0 max-w-full lg:w-[45%] lg:max-w-none xl:w-5/12 lg:self-center flex justify-center">
+                        <div className="relative group w-full max-w-[280px] sm:max-w-[320px] md:max-w-[360px] aspect-square rounded-2xl overflow-hidden border border-border/80 shadow-2xl transition-all duration-500 hover:border-foreground/30 hover:shadow-foreground/5 bg-muted">
+                            <Image
+                                src="/rafiraihan.jpeg"
+                                alt="Rafi Raihan Profile"
+                                width={400}
+                                height={400}
+                                className="object-cover w-full h-full grayscale group-hover:grayscale-0 transition-all duration-750 ease-out scale-[1.03] group-hover:scale-100"
+                                priority
+                            />
+                            {/* Overlay glow frame effect */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-background/30 via-transparent to-transparent opacity-60 group-hover:opacity-10 transition-opacity duration-500" />
+                        </div>
+                    </div>
+                </div>
 
-                                    <div className="min-w-0 min-[480px]:col-span-12 sm:col-span-8">
-                                        <div className="flex flex-wrap items-center gap-x-2 gap-y-2 sm:gap-x-3 sm:gap-y-2 md:gap-4">
-                                            {group.items.map((item) => (
-                                                <div
-                                                    key={item}
-                                                    className="tech-anim flex min-w-0 max-w-full flex-wrap items-center gap-x-1.5 gap-y-0.5 sm:gap-x-2 sm:gap-y-0 sm:gap-3 pr-1 sm:pr-2 md:pr-3"
-                                                    title={item}
-                                                >
-                                                    <Image
-                                                        src={`${group.iconDir}/${item}.svg`}
-                                                        alt={item}
-                                                        width={40}
-                                                        height={40}
-                                                        sizes="(max-width: 400px) 24px, (max-width: 640px) 28px, (max-width: 1024px) 32px, 40px"
-                                                        className="opacity-100 size-6 min-[400px]:size-7 sm:size-8 md:size-9 lg:size-10 shrink-0"
-                                                    />
-                                                    <span className="min-w-0 max-w-full font-mono text-[10px] uppercase leading-snug tracking-wide text-foreground/60 wrap-break-word min-[400px]:text-[11px] sm:text-xs sm:tracking-wider sm:whitespace-nowrap sm:break-normal md:text-sm">
-                                                        {item}
-                                                    </span>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
+                {/* Lower Area: Tech Stack Section */}
+                <div className="mt-16 sm:mt-20 md:mt-24 border-t border-border/50 pt-12 sm:pt-16 w-full">
+                    <div className="mb-8 md:mb-10 text-center lg:text-left">
+                        <span className="stats-anim inline-block font-mono text-[9px] uppercase tracking-[0.28em] text-foreground/55 min-[375px]:text-[10px] sm:text-xs sm:tracking-[0.35em] mb-2">
+                            Technologies
+                        </span>
+                        <h3 className="stats-anim text-2xl font-black uppercase tracking-tight text-foreground sm:text-3xl md:text-4xl">
+                            Tech Stack
+                        </h3>
+                    </div>
+
+                    {/* Grid of 3 rows: responsif for mobile (2 columns / 1 column on small screens) */}
+                    <div className="flex flex-col gap-4 sm:gap-5">
+                        {/* Baris 1 */}
+                        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 sm:gap-4">
+                            {row1.map(renderCard)}
+                        </div>
+
+                        {/* Baris 2 */}
+                        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 sm:gap-4">
+                            {row2.map(renderCard)}
+                        </div>
+
+                        {/* Baris 3 */}
+                        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 sm:gap-4">
+                            {row3.map(renderCard)}
                         </div>
                     </div>
                 </div>

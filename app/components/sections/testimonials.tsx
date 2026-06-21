@@ -87,7 +87,7 @@ export default function Testimonials() {
     }, []);
 
     return (
-        <section ref={containerRef} className="testimonials-section relative w-full py-32 overflow-hidden bg-background">
+        <section ref={containerRef} id="testimonials" className="testimonials-section relative w-full py-32 overflow-hidden bg-background scroll-mt-24">
             <div className="max-w-[1920px] mx-auto px-4 sm:px-6 md:px-12 lg:px-20 mb-20">
                 <div className="flex flex-col gap-4">
                     <span className="testimonial-header text-xs uppercase tracking-[0.3em] text-foreground/45 font-medium">Testimonials</span>

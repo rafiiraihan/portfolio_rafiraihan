@@ -54,8 +54,8 @@ export default function Footer() {
                             <span className="text-xs uppercase tracking-[0.3em] text-foreground/45 font-medium mb-6 block">Navigation</span>
                             <nav className="flex flex-col gap-3">
                                 {["About", "Work", "Testimonials", "Contact"].map((item) => (
-                                    <a 
-                                        key={item} 
+                                    <a
+                                        key={item}
                                         href={`#${item.toLowerCase()}`}
                                         className="text-lg md:text-xl uppercase font-bold text-foreground/60 hover:text-foreground transition-colors tracking-wide w-fit"
                                     >
@@ -65,7 +65,7 @@ export default function Footer() {
                             </nav>
                         </div>
 
-                        <button 
+                        <button
                             type="button"
                             onClick={scrollToTop}
                             className="group flex flex-col items-center gap-2 text-foreground/45 hover:text-foreground transition-colors"
@@ -96,10 +96,10 @@ export default function Footer() {
                             Rafi Raihan
                         </p>
                     </div>
-                    
+
                     <div className="flex gap-4">
                         {socialLinks.map((link) => (
-                            <a 
+                            <a
                                 key={link.name}
                                 href={link.url}
                                 className="group p-2 rounded-full border border-border bg-muted/40 hover:bg-muted hover:border-foreground/25 transition-all duration-300"

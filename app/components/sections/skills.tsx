@@ -10,7 +10,7 @@ import {
 import '@/components/ScrollVelocity.css';
 
 // All tech stack logos/names - combine into continuous string
-const techStackString = "Python • NumPy • Pandas • Scikit-learn • PyTorch • TensorFlow • Docker • PHP • MySQL • PostgreSQL • MongoDB • AWS • TypeScript • React.JS • Git • GitHub • FastAPI •";
+const techStackString = "Python • React • Flask • NumPy • Matplotlib • PyTorch • TensorFlow • Scikit-learn • Pandas • Docker • Git • GitHub • MongoDB • PostgreSQL • MySQL • PHP • Tailwind CSS • TypeScript • JavaScript •";
 
 function useElementWidth<T extends HTMLElement>(ref: React.RefObject<T | null>): number {
   const [width, setWidth] = useState(0);
@@ -83,14 +83,14 @@ function VelocityText({
 
   return (
     <div className="parallax overflow-hidden w-full">
-      <motion.div 
-        className="scroller" 
-        style={{ 
-          x, 
-          display: "flex", 
-          gap: "clamp(1rem, 3vw, 3rem)", 
-          paddingLeft: "clamp(0.75rem, 2vw, 1.5rem)", 
-          paddingRight: "clamp(0.75rem, 2vw, 1.5rem)", 
+      <motion.div
+        className="scroller"
+        style={{
+          x,
+          display: "flex",
+          gap: "clamp(1rem, 3vw, 3rem)",
+          paddingLeft: "clamp(0.75rem, 2vw, 1.5rem)",
+          paddingRight: "clamp(0.75rem, 2vw, 1.5rem)",
           willChange: "transform",
           width: "max-content"
         }}
@@ -102,61 +102,60 @@ function VelocityText({
 }
 
 export default function Skills() {
-    const sectionRef = useRef<HTMLElement>(null);
-    const [isMobile, setIsMobile] = React.useState(false);
-    const [marqueeActive, setMarqueeActive] = React.useState(true);
+  const sectionRef = useRef<HTMLElement>(null);
+  const [isMobile, setIsMobile] = React.useState(false);
+  const [marqueeActive, setMarqueeActive] = React.useState(true);
 
-    React.useEffect(() => {
-        const mq = window.matchMedia("(max-width: 767px)");
-        const sync = (): void => setIsMobile(mq.matches);
-        sync();
-        mq.addEventListener("change", sync);
-        return () => mq.removeEventListener("change", sync);
-    }, []);
+  React.useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    const sync = (): void => setIsMobile(mq.matches);
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, []);
 
-    React.useEffect(() => {
-        const el = sectionRef.current;
-        if (!el || typeof IntersectionObserver === "undefined") {
-            setMarqueeActive(true);
-            return;
-        }
-        const io = new IntersectionObserver(
-            ([entry]) => {
-                setMarqueeActive(entry.isIntersecting);
-            },
-            { root: null, rootMargin: "100px 0px", threshold: 0 },
-        );
-        io.observe(el);
-        return () => io.disconnect();
-    }, []);
-
-    return (
-        <section ref={sectionRef} className="skills-section relative bg-background overflow-hidden py-8 sm:py-12 md:py-16 lg:py-24">
-            {/* Gradient overlays for fade effect - smaller on mobile */}
-            <div className="absolute inset-y-0 left-0 w-12 sm:w-16 md:w-24 lg:w-32 bg-linear-to-r from-background via-background/80 to-transparent z-20 pointer-events-none" />
-            <div className="absolute inset-y-0 right-0 w-12 sm:w-16 md:w-24 lg:w-32 bg-linear-to-l from-background via-background/80 to-transparent z-20 pointer-events-none" />
-
-            <div className="relative z-10 overflow-hidden space-y-4 sm:space-y-6 md:space-y-8">
-                {/* First row - scrolling left */}
-                <VelocityText
-                    baseVelocity={isMobile ? 60 : 80}
-                    isMobile={isMobile}
-                    paused={!marqueeActive}
-                >
-                    {techStackString}
-                </VelocityText>
-
-                {/* Second row - scrolling right (opposite direction) */}
-                <VelocityText
-                    baseVelocity={isMobile ? -60 : -80}
-                    isMobile={isMobile}
-                    paused={!marqueeActive}
-                >
-                    {techStackString}
-                </VelocityText>
-            </div>
-        </section>
+  React.useEffect(() => {
+    const el = sectionRef.current;
+    if (!el || typeof IntersectionObserver === "undefined") {
+      setMarqueeActive(true);
+      return;
+    }
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        setMarqueeActive(entry.isIntersecting);
+      },
+      { root: null, rootMargin: "100px 0px", threshold: 0 },
     );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  return (
+    <section ref={sectionRef} className="skills-section relative bg-background overflow-hidden py-8 sm:py-12 md:py-16 lg:py-24">
+      {/* Gradient overlays for fade effect - smaller on mobile */}
+      <div className="absolute inset-y-0 left-0 w-12 sm:w-16 md:w-24 lg:w-32 bg-linear-to-r from-background via-background/80 to-transparent z-20 pointer-events-none" />
+      <div className="absolute inset-y-0 right-0 w-12 sm:w-16 md:w-24 lg:w-32 bg-linear-to-l from-background via-background/80 to-transparent z-20 pointer-events-none" />
+
+      <div className="relative z-10 overflow-hidden space-y-4 sm:space-y-6 md:space-y-8">
+        {/* First row - scrolling left */}
+        <VelocityText
+          baseVelocity={isMobile ? 60 : 80}
+          isMobile={isMobile}
+          paused={!marqueeActive}
+        >
+          {techStackString}
+        </VelocityText>
+
+        {/* Second row - scrolling right (opposite direction) */}
+        <VelocityText
+          baseVelocity={isMobile ? -60 : -80}
+          isMobile={isMobile}
+          paused={!marqueeActive}
+        >
+          {techStackString}
+        </VelocityText>
+      </div>
+    </section>
+  );
 }
 
-    

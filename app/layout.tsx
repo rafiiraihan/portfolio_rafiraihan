@@ -34,12 +34,6 @@ export const metadata: Metadata = {
     description: "Rafi Raihan is a Software Engineering graduate specializing in Machine Learning and Artificial Intelligence, passionate about building intelligent solutions.",
     images: "/images/logo.png",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Rafi Raihan | AI/ML Engineer",
-    description: "Rafi Raihan is a Software Engineering graduate specializing in Machine Learning and Artificial Intelligence, passionate about building intelligent solutions.",
-    images: ["/images/logo.png"],
-  },
 };
 
 export default function RootLayout({

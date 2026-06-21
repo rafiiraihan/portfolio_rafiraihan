@@ -3,7 +3,7 @@
 import { useGSAP } from "@/app/hooks/useGSAP";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Mail, Github, Linkedin, Twitter, ArrowUp } from "lucide-react";
+import { Mail, Github, Linkedin, ArrowUp } from "lucide-react";
 
 if (typeof window !== "undefined") {
     gsap.registerPlugin(ScrollTrigger);
@@ -13,7 +13,6 @@ const socialLinks = [
     { name: "Email", icon: Mail, url: "mailto:rafiraihan.dev@gmail.com" },
     { name: "GitHub", icon: Github, url: "https://github.com/rafiiraihan" },
     { name: "LinkedIn", icon: Linkedin, url: "https://www.linkedin.com/in/rafiraihann" },
-    // { name: "Twitter", icon: Twitter, url: "#" },
 ];
 
 export default function Footer() {

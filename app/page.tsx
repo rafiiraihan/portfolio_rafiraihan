@@ -39,9 +39,9 @@ export default function Home() {
       <ScrollSection>
         <Skills />
       </ScrollSection>
-      <ScrollSection>
+      {/* <ScrollSection>
         <Achievements />
-      </ScrollSection>
+      </ScrollSection> */}
       <ScrollSection>
         <Testimonials />
       </ScrollSection>

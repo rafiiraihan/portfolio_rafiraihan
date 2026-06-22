@@ -28,9 +28,9 @@ Modern software developer portfolio built with **Next.js, TypeScript, Tailwind C
 
 ## Preview Sections
 - Hero
-- Web Dev / UI Systems
 - About + Stack
 - Featured Work
+- Contact
 
 ## Run Locally
 ```bash

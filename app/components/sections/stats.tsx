@@ -182,7 +182,7 @@ export default function Stats() {
                     <div className="stats-panel-right w-full min-w-0 max-w-full lg:w-[45%] lg:max-w-none xl:w-5/12 lg:self-center flex justify-center">
                         <div className="relative group w-full max-w-[280px] sm:max-w-[320px] md:max-w-[360px] aspect-square rounded-2xl overflow-hidden border border-border/80 shadow-2xl transition-all duration-500 hover:border-foreground/30 hover:shadow-foreground/5 bg-muted">
                             <Image
-                                src="/rafiraihan.jpeg"
+                                src="/heropicRR1.jpeg"
                                 alt="Rafi Raihan Profile"
                                 width={400}
                                 height={400}

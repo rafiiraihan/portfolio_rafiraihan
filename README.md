@@ -9,7 +9,7 @@
 Modern software developer portfolio built with **Next.js, TypeScript, Tailwind CSS, and Framer Motion**.
 
 ## Live Website
-[https://#](https://#)
+[https://rafiraihan.vercel.app](https://rafiraihan.vercel.app)
 
 ## Features
 - Minimal brutalist UI
@@ -41,4 +41,4 @@ npm run dev
 ## Contact
 - LinkedIn: [https://www.linkedin.com/in/rafiraihann](https://www.linkedin.com/in/rafiraihann)
 - GitHub: [https://github.com/rafiiraihan](https://github.com/rafiiraihan)
-- Portfolio: [https://#](https://#)
+- Portfolio: [https://rafiraihan.vercel.app](https://rafiraihan.vercel.app)

@@ -373,7 +373,7 @@ export default function AppNavbar() {
     useEffect(() => {
         const fetchStars = async () => {
             try {
-                const response = await fetch("https://api.github.com/repos/rafiiraihan/portofolio-web");
+                const response = await fetch("https://api.github.com/repos/rafiiraihan/portfolio_rafiraihan");
                 if (!response.ok) return;
                 const data = (await response.json()) as { stargazers_count?: number };
                 if (typeof data.stargazers_count === "number") {
@@ -881,7 +881,7 @@ export default function AppNavbar() {
                         </div> */}
 
                         {/* <Link
-                            href="https://github.com/rafiiraihan/portofolio-web"
+                            href="https://github.com/rafiiraihan/portfolio_rafiraihan"
                             target="_blank"
                             rel="noopener noreferrer"
                             className={`inline-flex items-center gap-1 rounded-lg border px-2 py-1 transition-colors sm:gap-2 sm:px-2.5 ${topButtonClass}`}

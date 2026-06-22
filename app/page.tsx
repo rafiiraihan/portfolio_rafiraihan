@@ -19,7 +19,7 @@ export default function Home() {
     <main className="relative min-h-screen w-full overflow-x-hidden bg-background text-foreground">
       <ScrollProgress />
       <FloatingSocials />
-      
+
       <ScrollSection>
         <Hero />
       </ScrollSection>
@@ -31,7 +31,7 @@ export default function Home() {
       <ScrollSection>
         <Stats />
       </ScrollSection>
-      
+
       {/* <ScrollSection><Experience /></ScrollSection> */}
       <ScrollSection>
         <Projects />
@@ -42,14 +42,14 @@ export default function Home() {
       {/* <ScrollSection>
         <Achievements />
       </ScrollSection> */}
-      <ScrollSection>
+      {/* <ScrollSection>
         <Testimonials />
-      </ScrollSection>
-    
+      </ScrollSection> */}
+
       <ScrollSection>
         <Contact />
       </ScrollSection>
-      
+
       <Footer />
     </main>
   );

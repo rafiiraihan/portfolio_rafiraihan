@@ -52,7 +52,7 @@ export default function Footer() {
                         <div>
                             <span className="text-xs uppercase tracking-[0.3em] text-foreground/45 font-medium mb-6 block">Navigation</span>
                             <nav className="flex flex-col gap-3">
-                                {["About", "Work", "Testimonials", "Contact"].map((item) => (
+                                {["About", "Work", "Contact"].map((item) => (
                                     <a
                                         key={item}
                                         href={`#${item.toLowerCase()}`}

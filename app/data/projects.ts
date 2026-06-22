@@ -32,7 +32,7 @@ const projectCoreList: readonly ProjectCore[] = [
         live: "#",
         featured: true,
         year: "2024",
-        image: "/images/projects/tipayun.png",
+        image: "/images/projects/tipayun.webp",
     },
     {
         slug: "gymvision",
@@ -49,7 +49,7 @@ const projectCoreList: readonly ProjectCore[] = [
         live: "#",
         featured: true,
         year: "2024",
-        image: "/images/projects/gymvision.jpeg",
+        image: "/images/projects/gymvision.webp",
     },
     {
         slug: "cigarette-detection",
@@ -66,7 +66,7 @@ const projectCoreList: readonly ProjectCore[] = [
         live: "#",
         featured: true,
         year: "2026",
-        image: "/images/projects/rokok.jpg",
+        image: "/images/projects/rokok.webp",
     },
 ];
 
